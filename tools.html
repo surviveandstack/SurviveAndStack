@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Free Tools | SurviveAndStack</title>
+  <meta name="description" content="Free budgeting templates, debt calculators, and money tools to help you take control of your finances."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --black:#0a0a0a; --white:#f5f0e8; --gold:#c9a84c; --gold-light:#e8c96a; --gray:#1a1a1a; --gray-mid:#2e2e2e; --gray-text:#888; }
+    body { background:var(--black); color:var(--white); font-family:'DM Sans',sans-serif; font-weight:300; line-height:1.7; }
+    nav { position:fixed; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:1.2rem 4rem; background:rgba(10,10,10,0.92); backdrop-filter:blur(12px); border-bottom:1px solid rgba(201,168,76,0.15); }
+    .nav-logo { font-family:'Syne',sans-serif; font-weight:800; font-size:1.3rem; color:var(--gold); text-decoration:none; }
+    .nav-logo span { color:var(--white); }
+    .nav-links { display:flex; gap:2.5rem; list-style:none; }
+    .nav-links a { color:var(--gray-text); text-decoration:none; font-size:0.85rem; letter-spacing:0.08em; text-transform:uppercase; transition:color 0.2s; }
+    .nav-links a:hover { color:var(--gold); }
+    .nav-cta { background:var(--gold); color:var(--black); padding:0.6rem 1.4rem; border-radius:2px; font-family:'Syne',sans-serif; font-weight:700; font-size:0.8rem; text-transform:uppercase; text-decoration:none; }
+    .page-header { padding:10rem 4rem 4rem; border-bottom:1px solid rgba(245,240,232,0.08); }
+    .page-tag { font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); margin-bottom:1rem; display:flex; align-items:center; gap:0.8rem; }
+    .page-tag::before { content:''; display:block; width:1.5rem; height:1px; background:var(--gold); }
+    h1 { font-family:'Syne',sans-serif; font-weight:800; font-size:clamp(2.5rem,5vw,4rem); line-height:1.05; letter-spacing:-0.02em; }
+    .page-header p { color:var(--gray-text); margin-top:1rem; max-width:50ch; }
+    .tools-section { padding:5rem 4rem; }
+    .tools-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:1.5rem; margin-top:3rem; }
+    .tool-card { background:var(--gray); border:1px solid rgba(245,240,232,0.06); padding:2.5rem; border-radius:2px; transition:border-color 0.3s; }
+    .tool-card:hover { border-color:rgba(201,168,76,0.3); }
+    .tool-icon { font-size:2.5rem; margin-bottom:1.2rem; display:block; }
+    .tool-card h3 { font-family:'Syne',sans-serif; font-weight:700; font-size:1.1rem; margin-bottom:0.6rem; }
+    .tool-card p { font-size:0.88rem; color:var(--gray-text); margin-bottom:1.5rem; line-height:1.6; }
+    .tool-badge { display:inline-block; background:rgba(201,168,76,0.15); color:var(--gold); font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; padding:0.3rem 0.8rem; border-radius:2px; margin-bottom:1rem; }
+    .tool-btn { display:inline-block; background:var(--gold); color:var(--black); padding:0.7rem 1.5rem; border-radius:2px; font-family:'Syne',sans-serif; font-weight:700; font-size:0.8rem; letter-spacing:0.05em; text-transform:uppercase; text-decoration:none; transition:background 0.2s; cursor:pointer; border:none; }
+    .tool-btn:hover { background:var(--gold-light); }
+
+    /* DEBT CALCULATOR */
+    .calc-section { padding:3rem 4rem 5rem; background:var(--gray); }
+    .calc-section h2 { font-family:'Syne',sans-serif; font-weight:800; font-size:1.8rem; margin-bottom:0.5rem; }
+    .calc-section > p { color:var(--gray-text); margin-bottom:2.5rem; }
+    .calculator { background:var(--black); border:1px solid rgba(245,240,232,0.08); padding:2.5rem; border-radius:2px; max-width:600px; }
+    .calc-row { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-bottom:1.5rem; }
+    .calc-group { display:flex; flex-direction:column; gap:0.4rem; }
+    label { font-size:0.78rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--gray-text); }
+    input[type=number] { background:var(--gray); border:1px solid rgba(245,240,232,0.1); color:var(--white); font-family:'DM Sans',sans-serif; font-size:1rem; padding:0.8rem 1rem; border-radius:2px; outline:none; transition:border-color 0.2s; }
+    input[type=number]:focus { border-color:rgba(201,168,76,0.5); }
+    .calc-result { background:rgba(201,168,76,0.08); border:1px solid rgba(201,168,76,0.2); padding:1.5rem; border-radius:2px; margin-top:1.5rem; display:none; }
+    .calc-result.show { display:block; }
+    .result-line { display:flex; justify-content:space-between; padding:0.4rem 0; font-size:0.9rem; }
+    .result-line strong { color:var(--gold); font-family:'Syne',sans-serif; }
+
+    footer { background:var(--gray); padding:3rem 4rem; border-top:1px solid rgba(245,240,232,0.08); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; }
+    footer a { color:var(--gray-text); text-decoration:none; font-size:0.82rem; }
+    footer a:hover { color:var(--gold); }
+    .footer-links { display:flex; gap:2rem; }
+    @media(max-width:768px) { nav { padding:1rem 1.5rem; } .nav-links { display:none; } .page-header,.tools-section,.calc-section,footer { padding-left:1.5rem; padding-right:1.5rem; } .calc-row { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <nav>
+    <a class="nav-logo" href="../index.html">Survive<span>&</span>Stack</a>
+    <ul class="nav-links">
+      <li><a href="blog.html">Articles</a></li>
+      <li><a href="debt.html">Debt Help</a></li>
+      <li><a href="tools.html">Free Tools</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a class="nav-cta" href="debt.html">Get Free Help</a>
+  </nav>
+
+  <div class="page-header">
+    <p class="page-tag">Free resources</p>
+    <h1>Tools to take control of your money.</h1>
+    <p>Free calculators, templates, and guides. No signup required for most tools.</p>
+  </div>
+
+  <section class="tools-section">
+    <div class="tools-grid">
+      <div class="tool-card">
+        <span class="tool-icon">📋</span>
+        <span class="tool-badge">Free Download</span>
+        <h3>Zero Based Budget Template</h3>
+        <p>A simple spreadsheet that walks you through giving every dollar a job. Works in Google Sheets or Excel. No formulas needed — just fill it in.</p>
+        <button class="tool-btn" onclick="alert('Budget template coming soon! Follow us on social media @SurviveAndStack for updates.')">Download Free</button>
+      </div>
+      <div class="tool-card">
+        <span class="tool-icon">📉</span>
+        <span class="tool-badge">Free</span>
+        <h3>Debt Tracker Spreadsheet</h3>
+        <p>Track all your debts in one place — balance, interest rate, minimum payment, and your progress. Visual payoff chart included.</p>
+        <button class="tool-btn" onclick="alert('Debt tracker coming soon! Follow us on social media @SurviveAndStack for updates.')">Download Free</button>
+      </div>
+      <div class="tool-card">
+        <span class="tool-icon">🎯</span>
+        <span class="tool-badge">Free</span>
+        <h3>Savings Goal Tracker</h3>
+        <p>Set a savings goal and track your progress week by week. Visual progress bar keeps you motivated to hit your target.</p>
+        <button class="tool-btn" onclick="alert('Savings tracker coming soon! Follow us on social media @SurviveAndStack for updates.')">Download Free</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEBT CALCULATOR -->
+  <section class="calc-section">
+    <h2>Debt Payoff Calculator</h2>
+    <p>See exactly how long it will take to pay off your debt and how much interest you'll pay.</p>
+    <div class="calculator">
+      <div class="calc-row">
+        <div class="calc-group">
+          <label for="balance">Total Debt Balance ($)</label>
+          <input type="number" id="balance" placeholder="e.g. 5000"/>
+        </div>
+        <div class="calc-group">
+          <label for="rate">Interest Rate (%)</label>
+          <input type="number" id="rate" placeholder="e.g. 19.9" step="0.1"/>
+        </div>
+      </div>
+      <div class="calc-row">
+        <div class="calc-group">
+          <label for="payment">Monthly Payment ($)</label>
+          <input type="number" id="payment" placeholder="e.g. 200"/>
+        </div>
+        <div class="calc-group" style="justify-content:flex-end;">
+          <label>&nbsp;</label>
+          <button class="tool-btn" onclick="calculateDebt()">Calculate</button>
+        </div>
+      </div>
+      <div class="calc-result" id="calcResult">
+        <div class="result-line"><span>Months to pay off:</span><strong id="resMonths">—</strong></div>
+        <div class="result-line"><span>Total interest paid:</span><strong id="resInterest">—</strong></div>
+        <div class="result-line"><span>Total amount paid:</span><strong id="resTotal">—</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <a href="../index.html" style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;color:var(--gold);text-decoration:none;">Survive<span style="color:var(--white)">&</span>Stack</a>
+    <div class="footer-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="disclaimer.html">Disclaimer</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <span style="color:var(--gray-text);font-size:0.78rem;">© 2026 SurviveAndStack</span>
+  </footer>
+
+  <script>
+    function calculateDebt() {
+      const balance = parseFloat(document.getElementById('balance').value);
+      const rate = parseFloat(document.getElementById('rate').value) / 100 / 12;
+      const payment = parseFloat(document.getElementById('payment').value);
+      if (!balance || !rate || !payment || payment <= balance * rate) {
+        alert('Please check your numbers. Your monthly payment must be higher than the monthly interest charge.');
+        return;
+      }
+      const months = Math.ceil(-Math.log(1 - (balance * rate) / payment) / Math.log(1 + rate));
+      const totalPaid = payment * months;
+      const totalInterest = totalPaid - balance;
+      document.getElementById('resMonths').textContent = months + ' months (' + (months/12).toFixed(1) + ' years)';
+      document.getElementById('resInterest').textContent = '$' + totalInterest.toFixed(2);
+      document.getElementById('resTotal').textContent = '$' + totalPaid.toFixed(2);
+      document.getElementById('calcResult').classList.add('show');
+    }
+  </script>
+</body>
+</html>

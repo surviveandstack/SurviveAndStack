@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | SurviveAndStack</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --black:#0a0a0a; --white:#f5f0e8; --gold:#c9a84c; --gold-light:#e8c96a; --gray:#1a1a1a; --gray-mid:#2e2e2e; --gray-text:#888; }
+    body { background:var(--black); color:var(--white); font-family:'DM Sans',sans-serif; font-weight:300; line-height:1.7; }
+    nav { position:fixed; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:1.2rem 4rem; background:rgba(10,10,10,0.92); backdrop-filter:blur(12px); border-bottom:1px solid rgba(201,168,76,0.15); }
+    .nav-logo { font-family:'Syne',sans-serif; font-weight:800; font-size:1.3rem; color:var(--gold); text-decoration:none; }
+    .nav-logo span { color:var(--white); }
+    .nav-links { display:flex; gap:2.5rem; list-style:none; }
+    .nav-links a { color:var(--gray-text); text-decoration:none; font-size:0.85rem; letter-spacing:0.08em; text-transform:uppercase; }
+    .nav-links a:hover { color:var(--gold); }
+    .nav-cta { background:var(--gold); color:var(--black); padding:0.6rem 1.4rem; border-radius:2px; font-family:'Syne',sans-serif; font-weight:700; font-size:0.8rem; text-transform:uppercase; text-decoration:none; }
+    .page-header { padding:10rem 4rem 4rem; border-bottom:1px solid rgba(245,240,232,0.08); }
+    .page-tag { font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); margin-bottom:1rem; display:flex; align-items:center; gap:0.8rem; }
+    .page-tag::before { content:''; display:block; width:1.5rem; height:1px; background:var(--gold); }
+    h1 { font-family:'Syne',sans-serif; font-weight:800; font-size:clamp(2.5rem,5vw,4rem); line-height:1.05; letter-spacing:-0.02em; }
+    .contact-layout { display:grid; grid-template-columns:1fr 1fr; gap:6rem; padding:5rem 4rem; max-width:1100px; }
+    .contact-info h2 { font-family:'Syne',sans-serif; font-weight:700; font-size:1.4rem; margin-bottom:1rem; }
+    .contact-info p { color:rgba(245,240,232,0.7); margin-bottom:1.5rem; }
+    .contact-email { display:flex; align-items:center; gap:0.8rem; color:var(--gold); font-family:'Syne',sans-serif; font-weight:600; font-size:1rem; text-decoration:none; margin-bottom:2rem; }
+    .contact-email:hover { color:var(--gold-light); }
+    .contact-note { background:var(--gray); border-left:3px solid var(--gold); padding:1.5rem 2rem; border-radius:0 2px 2px 0; }
+    .contact-note p { color:rgba(245,240,232,0.7); font-size:0.88rem; margin:0; }
+    .contact-form { display:flex; flex-direction:column; gap:1.2rem; }
+    .form-group { display:flex; flex-direction:column; gap:0.4rem; }
+    label { font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--gray-text); }
+    input, textarea, select {
+      background:var(--gray); border:1px solid rgba(245,240,232,0.1);
+      color:var(--white); font-family:'DM Sans',sans-serif; font-size:0.95rem;
+      padding:0.9rem 1.1rem; border-radius:2px; outline:none; transition:border-color 0.2s;
+    }
+    input:focus, textarea:focus { border-color:rgba(201,168,76,0.5); }
+    textarea { min-height:140px; resize:vertical; }
+    .submit-btn { background:var(--gold); color:var(--black); border:none; padding:1rem 2rem; font-family:'Syne',sans-serif; font-weight:700; font-size:0.9rem; letter-spacing:0.05em; text-transform:uppercase; cursor:pointer; border-radius:2px; transition:background 0.2s; align-self:flex-start; }
+    .submit-btn:hover { background:var(--gold-light); }
+    footer { background:var(--gray); padding:3rem 4rem; border-top:1px solid rgba(245,240,232,0.08); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; }
+    footer a { color:var(--gray-text); text-decoration:none; font-size:0.82rem; }
+    footer a:hover { color:var(--gold); }
+    .footer-links { display:flex; gap:2rem; }
+    @media(max-width:768px) { nav { padding:1rem 1.5rem; } .nav-links { display:none; } .page-header,footer { padding-left:1.5rem; padding-right:1.5rem; } .contact-layout { grid-template-columns:1fr; gap:3rem; padding:3rem 1.5rem; } }
+  </style>
+</head>
+<body>
+  <nav>
+    <a class="nav-logo" href="../index.html">Survive<span>&</span>Stack</a>
+    <ul class="nav-links">
+      <li><a href="blog.html">Articles</a></li>
+      <li><a href="debt.html">Debt Help</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a class="nav-cta" href="debt.html">Get Free Help</a>
+  </nav>
+
+  <div class="page-header">
+    <p class="page-tag">Get in touch</p>
+    <h1>We'd love to hear from you.</h1>
+  </div>
+
+  <div class="contact-layout">
+    <div class="contact-info">
+      <h2>Contact SurviveAndStack</h2>
+      <p>Have a question, want to collaborate, or need help finding the right resource? Send us a message and we'll get back to you as soon as possible.</p>
+      <a class="contact-email" href="mailto:surviveandstack@gmail.com">✉ surviveandstack@gmail.com</a>
+      <div class="contact-note">
+        <p>We typically respond within 24–48 hours. For urgent financial guidance, please consult a qualified financial advisor.</p>
+      </div>
+    </div>
+    <div>
+      <div class="contact-form">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" placeholder="First and last name"/>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="your@email.com"/>
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <select id="subject">
+            <option value="">Select a topic...</option>
+            <option>General Question</option>
+            <option>Content Suggestion</option>
+            <option>Affiliate / Partnership</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" placeholder="Tell us what's on your mind..."></textarea>
+        </div>
+        <button class="submit-btn" onclick="alert('Thanks for reaching out! Please email us directly at surviveandstack@gmail.com')">Send Message</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <a href="../index.html" style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;color:var(--gold);text-decoration:none;">Survive<span style="color:var(--white)">&</span>Stack</a>
+    <div class="footer-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="disclaimer.html">Disclaimer</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <span style="color:var(--gray-text);font-size:0.78rem;">© 2026 SurviveAndStack</span>
+  </footer>
+</body>
+</html>
