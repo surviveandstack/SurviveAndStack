@@ -9,7 +9,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root { --black:#0a0a0a; --white:#f5f0e8; --gold:#c9a84c; --gold-light:#e8c96a; --gray:#1a1a1a; --gray-mid:#2e2e2e; --gray-text:#888; }
+    :root {
+      --black:#0a0a0a; --white:#f5f0e8; --gold:#c9a84c; --gold-light:#e8c96a;
+      --green:#2d6a4f; --green-light:#52b788; --gray:#1a1a1a; --gray-mid:#2e2e2e;
+      --gray-text:#888; --warm:#fff8ee; --warm-dark:#fef0d6;
+    }
     body { background:var(--black); color:var(--white); font-family:'DM Sans',sans-serif; font-weight:300; line-height:1.7; }
     nav { position:fixed; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:1.2rem 4rem; background:rgba(10,10,10,0.92); backdrop-filter:blur(12px); border-bottom:1px solid rgba(201,168,76,0.15); }
     .nav-logo { font-family:'Syne',sans-serif; font-weight:800; font-size:1.3rem; color:var(--gold); text-decoration:none; }
@@ -23,37 +27,78 @@
     .page-tag::before { content:''; display:block; width:1.5rem; height:1px; background:var(--gold); }
     h1 { font-family:'Syne',sans-serif; font-weight:800; font-size:clamp(2.5rem,5vw,4rem); line-height:1.05; letter-spacing:-0.02em; }
     .page-header p { color:var(--gray-text); margin-top:1rem; max-width:50ch; }
-    .tools-section { padding:5rem 4rem; }
-    .tools-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:1.5rem; margin-top:3rem; }
-    .tool-card { background:var(--gray); border:1px solid rgba(245,240,232,0.06); padding:2.5rem; border-radius:2px; transition:border-color 0.3s; }
-    .tool-card:hover { border-color:rgba(201,168,76,0.3); }
-    .tool-icon { font-size:2.5rem; margin-bottom:1.2rem; display:block; }
-    .tool-card h3 { font-family:'Syne',sans-serif; font-weight:700; font-size:1.1rem; margin-bottom:0.6rem; }
-    .tool-card p { font-size:0.88rem; color:var(--gray-text); margin-bottom:1.5rem; line-height:1.6; }
-    .tool-badge { display:inline-block; background:rgba(201,168,76,0.15); color:var(--gold); font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; padding:0.3rem 0.8rem; border-radius:2px; margin-bottom:1rem; }
-    .tool-btn { display:inline-block; background:var(--gold); color:var(--black); padding:0.7rem 1.5rem; border-radius:2px; font-family:'Syne',sans-serif; font-weight:700; font-size:0.8rem; letter-spacing:0.05em; text-transform:uppercase; text-decoration:none; transition:background 0.2s; cursor:pointer; border:none; }
-    .tool-btn:hover { background:var(--gold-light); }
 
-    /* DEBT CALCULATOR */
+    /* DOWNLOAD CARDS */
+    .tools-section { padding:5rem 4rem; }
+    .tools-section h2 { font-family:'Syne',sans-serif; font-weight:800; font-size:1.8rem; margin-bottom:0.5rem; }
+    .tools-section > p { color:var(--gray-text); margin-bottom:2.5rem; }
+    .tools-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:1.5rem; }
+    .tool-card { background:var(--gray); border:1px solid rgba(245,240,232,0.06); padding:2.5rem; border-radius:2px; transition:border-color 0.3s; display:flex; flex-direction:column; gap:1rem; }
+    .tool-card:hover { border-color:rgba(201,168,76,0.3); }
+    .tool-icon { font-size:2.2rem; }
+    .tool-badge { display:inline-block; background:rgba(201,168,76,0.15); color:var(--gold); font-size:0.68rem; letter-spacing:0.1em; text-transform:uppercase; padding:0.25rem 0.7rem; border-radius:2px; width:fit-content; }
+    .tool-card h3 { font-family:'Syne',sans-serif; font-weight:700; font-size:1.05rem; }
+    .tool-card p { font-size:0.88rem; color:var(--gray-text); line-height:1.6; flex:1; }
+    .tool-btn { display:inline-block; background:var(--gold); color:var(--black); padding:0.75rem 1.5rem; border-radius:2px; font-family:'Syne',sans-serif; font-weight:700; font-size:0.8rem; letter-spacing:0.05em; text-transform:uppercase; text-decoration:none; transition:background 0.2s; cursor:pointer; border:none; text-align:center; }
+    .tool-btn:hover { background:var(--gold-light); }
+    .tool-btn-outline { background:transparent; border:1px solid rgba(245,240,232,0.15); color:var(--white); }
+    .tool-btn-outline:hover { border-color:var(--gold); color:var(--gold); background:transparent; }
+
+    /* BUDGET TEMPLATE inline */
+    .budget-section { padding:0 4rem 5rem; }
+    .budget-section h2 { font-family:'Syne',sans-serif; font-weight:800; font-size:1.8rem; margin-bottom:0.5rem; }
+    .budget-section > p { color:var(--gray-text); margin-bottom:2rem; }
+    .budget-table { width:100%; border-collapse:collapse; margin-bottom:1.5rem; }
+    .budget-table th { font-family:'Syne',sans-serif; font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); padding:0.8rem 1rem; text-align:left; border-bottom:1px solid rgba(201,168,76,0.2); }
+    .budget-table td { padding:0.7rem 1rem; font-size:0.9rem; border-bottom:1px solid rgba(245,240,232,0.05); color:rgba(245,240,232,0.8); }
+    .budget-table tr:hover td { background:rgba(245,240,232,0.02); }
+    .budget-table input[type=number], .budget-table input[type=text] {
+      background:transparent; border:none; border-bottom:1px solid rgba(245,240,232,0.15);
+      color:var(--white); font-family:'DM Sans',sans-serif; font-size:0.9rem;
+      padding:0.2rem 0.4rem; width:100%; outline:none; transition:border-color 0.2s;
+    }
+    .budget-table input:focus { border-bottom-color:var(--gold); }
+    .budget-table .section-head td { font-family:'Syne',sans-serif; font-weight:700; font-size:0.8rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--green-light); padding-top:1.5rem; background:transparent; border:none; }
+    .total-row td { font-family:'Syne',sans-serif; font-weight:700; color:var(--gold); border-top:1px solid rgba(201,168,76,0.3); padding-top:1rem; }
+    .balance-display { background:var(--gray); border:1px solid rgba(201,168,76,0.2); padding:1.5rem 2rem; border-radius:2px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; margin-bottom:1.5rem; }
+    .balance-label { font-family:'Syne',sans-serif; font-size:0.8rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--gray-text); }
+    .balance-amount { font-family:'Syne',sans-serif; font-size:2rem; font-weight:800; }
+    .balance-amount.positive { color:var(--green-light); }
+    .balance-amount.negative { color:#c1121f; }
+    .balance-amount.zero { color:var(--gold); }
+
+    /* CALCULATOR */
     .calc-section { padding:3rem 4rem 5rem; background:var(--gray); }
     .calc-section h2 { font-family:'Syne',sans-serif; font-weight:800; font-size:1.8rem; margin-bottom:0.5rem; }
-    .calc-section > p { color:var(--gray-text); margin-bottom:2.5rem; }
-    .calculator { background:var(--black); border:1px solid rgba(245,240,232,0.08); padding:2.5rem; border-radius:2px; max-width:600px; }
+    .calc-section > p { color:var(--gray-text); margin-bottom:2rem; }
+    .calc-box { background:var(--black); border:1px solid rgba(245,240,232,0.08); padding:2.5rem; border-radius:2px; max-width:620px; }
     .calc-row { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-bottom:1.5rem; }
     .calc-group { display:flex; flex-direction:column; gap:0.4rem; }
     label { font-size:0.78rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--gray-text); }
-    input[type=number] { background:var(--gray); border:1px solid rgba(245,240,232,0.1); color:var(--white); font-family:'DM Sans',sans-serif; font-size:1rem; padding:0.8rem 1rem; border-radius:2px; outline:none; transition:border-color 0.2s; }
-    input[type=number]:focus { border-color:rgba(201,168,76,0.5); }
-    .calc-result { background:rgba(201,168,76,0.08); border:1px solid rgba(201,168,76,0.2); padding:1.5rem; border-radius:2px; margin-top:1.5rem; display:none; }
+    select, input[type=number] {
+      background:var(--gray); border:1px solid rgba(245,240,232,0.1);
+      color:var(--white); font-family:'DM Sans',sans-serif; font-size:1rem;
+      padding:0.8rem 1rem; border-radius:2px; outline:none; transition:border-color 0.2s;
+      -webkit-appearance:none; appearance:none;
+    }
+    select { background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23888' d='M6 8L1 3h10z'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 1rem center; padding-right:2.5rem; }
+    input[type=number]:focus, select:focus { border-color:rgba(201,168,76,0.5); }
+    .calc-result { background:rgba(201,168,76,0.06); border:1px solid rgba(201,168,76,0.2); padding:1.5rem 2rem; border-radius:2px; margin-top:1.5rem; display:none; }
     .calc-result.show { display:block; }
-    .result-line { display:flex; justify-content:space-between; padding:0.4rem 0; font-size:0.9rem; }
-    .result-line strong { color:var(--gold); font-family:'Syne',sans-serif; }
+    .result-line { display:flex; justify-content:space-between; align-items:center; padding:0.5rem 0; font-size:0.9rem; border-bottom:1px solid rgba(245,240,232,0.06); }
+    .result-line:last-child { border:none; }
+    .result-line strong { color:var(--gold); font-family:'Syne',sans-serif; font-size:1.05rem; }
+    .result-tip { margin-top:1rem; padding-top:1rem; border-top:1px solid rgba(245,240,232,0.08); font-size:0.85rem; color:var(--gray-text); line-height:1.6; }
 
     footer { background:var(--gray); padding:3rem 4rem; border-top:1px solid rgba(245,240,232,0.08); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; }
     footer a { color:var(--gray-text); text-decoration:none; font-size:0.82rem; }
     footer a:hover { color:var(--gold); }
     .footer-links { display:flex; gap:2rem; }
-    @media(max-width:768px) { nav { padding:1rem 1.5rem; } .nav-links { display:none; } .page-header,.tools-section,.calc-section,footer { padding-left:1.5rem; padding-right:1.5rem; } .calc-row { grid-template-columns:1fr; } }
+    @media(max-width:768px) {
+      nav { padding:1rem 1.5rem; } .nav-links { display:none; }
+      .page-header,.tools-section,.budget-section,.calc-section,footer { padding-left:1.5rem; padding-right:1.5rem; }
+      .calc-row { grid-template-columns:1fr; }
+    }
   </style>
 </head>
 <body>
@@ -72,54 +117,150 @@
   <div class="page-header">
     <p class="page-tag">Free resources</p>
     <h1>Tools to take control of your money.</h1>
-    <p>Free calculators, templates, and guides. No signup required for most tools.</p>
+    <p>Free guides, calculators, and templates. No signup needed. Just download and use.</p>
   </div>
 
+  <!-- DOWNLOAD CARDS -->
   <section class="tools-section">
+    <h2>Free Downloads</h2>
+    <p>Everything below is completely free. No email required.</p>
     <div class="tools-grid">
+
+      <div class="tool-card">
+        <span class="tool-icon">📖</span>
+        <span class="tool-badge">Free PDF — 7 Pages</span>
+        <h3>Debt Escape Starter Guide</h3>
+        <p>Our most popular resource. 5 clear steps to start getting out of debt this week. Written for real people, not finance experts.</p>
+        <a class="tool-btn" href="https://linktr.ee/SurviveAndStack" target="_blank">Download Free Guide</a>
+      </div>
+
       <div class="tool-card">
         <span class="tool-icon">📋</span>
-        <span class="tool-badge">Free Download</span>
+        <span class="tool-badge">Free — Use Below</span>
         <h3>Zero Based Budget Template</h3>
-        <p>A simple spreadsheet that walks you through giving every dollar a job. Works in Google Sheets or Excel. No formulas needed — just fill it in.</p>
-        <button class="tool-btn" onclick="alert('Budget template coming soon! Follow us on social media @SurviveAndStack for updates.')">Download Free</button>
+        <p>Fill in your income and expenses below and get an instant picture of where your money is actually going. Works in any currency.</p>
+        <a class="tool-btn tool-btn-outline" href="#budget-tool">Use Free Tool ↓</a>
       </div>
+
       <div class="tool-card">
-        <span class="tool-icon">📉</span>
-        <span class="tool-badge">Free</span>
-        <h3>Debt Tracker Spreadsheet</h3>
-        <p>Track all your debts in one place — balance, interest rate, minimum payment, and your progress. Visual payoff chart included.</p>
-        <button class="tool-btn" onclick="alert('Debt tracker coming soon! Follow us on social media @SurviveAndStack for updates.')">Download Free</button>
+        <span class="tool-icon">🧮</span>
+        <span class="tool-badge">Free — Use Below</span>
+        <h3>Debt Payoff Calculator</h3>
+        <p>See exactly how long it takes to pay off your debt and how much interest you'll save by paying more than the minimum.</p>
+        <a class="tool-btn tool-btn-outline" href="#calc-tool">Use Calculator ↓</a>
       </div>
+
       <div class="tool-card">
-        <span class="tool-icon">🎯</span>
-        <span class="tool-badge">Free</span>
-        <h3>Savings Goal Tracker</h3>
-        <p>Set a savings goal and track your progress week by week. Visual progress bar keeps you motivated to hit your target.</p>
-        <button class="tool-btn" onclick="alert('Savings tracker coming soon! Follow us on social media @SurviveAndStack for updates.')">Download Free</button>
+        <span class="tool-icon">📱</span>
+        <span class="tool-badge">Free Apps</span>
+        <h3>Best Free Money Apps</h3>
+        <p>Acorns, Chime, Credit Karma, Plum and more — all free to download and each one does the hard work automatically for you.</p>
+        <a class="tool-btn" href="https://linktr.ee/SurviveAndStack" target="_blank">See All Apps →</a>
       </div>
+
     </div>
   </section>
 
-  <!-- DEBT CALCULATOR -->
-  <section class="calc-section">
+  <!-- BUDGET TOOL -->
+  <section class="budget-section" id="budget-tool">
+    <h2>Zero Based Budget Template</h2>
+    <p>Fill in your numbers. Everything updates live. Aim for £0 remaining.</p>
+
+    <div class="balance-display">
+      <div>
+        <div class="balance-label">Monthly Income</div>
+        <div class="balance-amount" id="totalIncome" style="color:var(--white)">0</div>
+      </div>
+      <div>
+        <div class="balance-label">Total Expenses</div>
+        <div class="balance-amount" id="totalExpenses" style="color:var(--white)">0</div>
+      </div>
+      <div>
+        <div class="balance-label">Remaining (aim for 0)</div>
+        <div class="balance-amount zero" id="remaining">0</div>
+      </div>
+    </div>
+
+    <table class="budget-table">
+      <thead><tr><th>Category</th><th>Item</th><th>Amount</th></tr></thead>
+      <tbody id="budgetBody">
+        <tr class="section-head"><td colspan="3">Income</td></tr>
+        <tr><td>Primary</td><td><input type="text" placeholder="Job / salary"/></td><td><input type="number" class="income-field" placeholder="0" min="0"/></td></tr>
+        <tr><td>Secondary</td><td><input type="text" placeholder="Side income / benefits"/></td><td><input type="number" class="income-field" placeholder="0" min="0"/></td></tr>
+
+        <tr class="section-head"><td colspan="3">Housing</td></tr>
+        <tr><td>Rent / Mortgage</td><td><input type="text" placeholder="Landlord / bank"/></td><td><input type="number" class="expense-field" placeholder="0" min="0"/></td></tr>
+        <tr><td>Council Tax</td><td><input type="text" placeholder=""/></td><td><input type="number" class="expense-field" placeholder="0" min="0"/></td></tr>
+        <tr><td>Gas / Electric</td><td><input type="text" placeholder="Provider name"/></td><td><input type="number" class="expense-field" placeholder="0" min="0"/></td></tr>
+        <tr><td>Water</td><td><input type="text" placeholder=""/></td><td><input type="number" class="expense-field" placeholder="0" min="0"/></td></tr>
+        <tr><td>Internet / Phone</td><td><input type="text" placeholder="Provider"/></td><td><input type="number" class="expense-field" placeholder="0" min="0"/></td></tr>
+
+        <tr class="section-head"><td colspan="3">Food</td></tr>
+        <tr><td>Groceries</td><td><input type="text" placeholder="Weekly shop"/></td><td><input type="number" class="expense-field" placeholder="0" min="0"/></td></tr>
+        <tr><td>Eating out / Takeaway</td><td><input type="text" placeholder=""/></td><td><input type="number" class="expense-field" placeholder="0" min="0"/></td></tr>
+
+        <tr class="section-head"><td colspan="3">Transport</td></tr>
+        <tr><td>Travel / Fuel</td><td><input type="text" placeholder="Bus / train / petrol"/></td><td><input type="number" class="expense-field" placeholder="0" min="0"/></td></tr>
+        <tr><td>Car Insurance</td><td><input type="text" placeholder=""/></td><td><input type="number" class="expense-field" placeholder="0" min="0"/></td></tr>
+
+        <tr class="section-head"><td colspan="3">Debt Payments</td></tr>
+        <tr><td>Credit Card</td><td><input type="text" placeholder="Card name"/></td><td><input type="number" class="expense-field" placeholder="0" min="0"/></td></tr>
+        <tr><td>Loan</td><td><input type="text" placeholder="Loan name"/></td><td><input type="number" class="expense-field" placeholder="0" min="0"/></td></tr>
+        <tr><td>Extra Debt Payment</td><td><input type="text" placeholder="Snowball / avalanche"/></td><td><input type="number" class="expense-field" placeholder="0" min="0"/></td></tr>
+
+        <tr class="section-head"><td colspan="3">Savings</td></tr>
+        <tr><td>Emergency Fund</td><td><input type="text" placeholder="Separate account"/></td><td><input type="number" class="expense-field" placeholder="0" min="0"/></td></tr>
+
+        <tr class="section-head"><td colspan="3">Personal</td></tr>
+        <tr><td>Subscriptions</td><td><input type="text" placeholder="Netflix, Spotify etc"/></td><td><input type="number" class="expense-field" placeholder="0" min="0"/></td></tr>
+        <tr><td>Clothing</td><td><input type="text" placeholder=""/></td><td><input type="number" class="expense-field" placeholder="0" min="0"/></td></tr>
+        <tr><td>Fun money</td><td><input type="text" placeholder="Guilt-free spending"/></td><td><input type="number" class="expense-field" placeholder="0" min="0"/></td></tr>
+        <tr><td>Other</td><td><input type="text" placeholder=""/></td><td><input type="number" class="expense-field" placeholder="0" min="0"/></td></tr>
+      </tbody>
+    </table>
+    <button class="tool-btn" onclick="window.print()">Print / Save as PDF</button>
+  </section>
+
+  <!-- CALCULATOR -->
+  <section class="calc-section" id="calc-tool">
     <h2>Debt Payoff Calculator</h2>
-    <p>See exactly how long it will take to pay off your debt and how much interest you'll pay.</p>
-    <div class="calculator">
+    <p>See exactly how long it will take — and how much you'll save by paying more.</p>
+    <div class="calc-box">
       <div class="calc-row">
         <div class="calc-group">
-          <label for="balance">Total Debt Balance ($)</label>
-          <input type="number" id="balance" placeholder="e.g. 5000"/>
+          <label for="currency">Currency</label>
+          <select id="currency">
+            <option value="£">£ — British Pound</option>
+            <option value="$">$ — US Dollar</option>
+            <option value="€">€ — Euro</option>
+            <option value="₦">₦ — Nigerian Naira</option>
+            <option value="R">R — South African Rand</option>
+            <option value="A$">A$ — Australian Dollar</option>
+            <option value="C$">C$ — Canadian Dollar</option>
+            <option value="₹">₹ — Indian Rupee</option>
+            <option value="¥">¥ — Japanese Yen</option>
+            <option value="Fr">Fr — Swiss Franc</option>
+          </select>
         </div>
         <div class="calc-group">
-          <label for="rate">Interest Rate (%)</label>
-          <input type="number" id="rate" placeholder="e.g. 19.9" step="0.1"/>
+          <label for="balance">Total Debt Balance</label>
+          <input type="number" id="balance" placeholder="e.g. 5000" min="1"/>
         </div>
       </div>
       <div class="calc-row">
         <div class="calc-group">
-          <label for="payment">Monthly Payment ($)</label>
-          <input type="number" id="payment" placeholder="e.g. 200"/>
+          <label for="rate">Interest Rate (%)</label>
+          <input type="number" id="rate" placeholder="e.g. 19.9" step="0.1" min="0.1"/>
+        </div>
+        <div class="calc-group">
+          <label for="payment">Monthly Payment</label>
+          <input type="number" id="payment" placeholder="e.g. 200" min="1"/>
+        </div>
+      </div>
+      <div class="calc-row">
+        <div class="calc-group">
+          <label for="extra">Extra Monthly Payment (optional)</label>
+          <input type="number" id="extra" placeholder="e.g. 50 extra" min="0"/>
         </div>
         <div class="calc-group" style="justify-content:flex-end;">
           <label>&nbsp;</label>
@@ -127,9 +268,11 @@
         </div>
       </div>
       <div class="calc-result" id="calcResult">
-        <div class="result-line"><span>Months to pay off:</span><strong id="resMonths">—</strong></div>
-        <div class="result-line"><span>Total interest paid:</span><strong id="resInterest">—</strong></div>
-        <div class="result-line"><span>Total amount paid:</span><strong id="resTotal">—</strong></div>
+        <div class="result-line"><span>Months to pay off (current):</span><strong id="resMonths">—</strong></div>
+        <div class="result-line"><span>Total interest paid (current):</span><strong id="resInterest">—</strong></div>
+        <div class="result-line" id="extraRow" style="display:none"><span>Months with extra payment:</span><strong id="resMonthsExtra">—</strong></div>
+        <div class="result-line" id="extraSavingRow" style="display:none"><span>Interest saved with extra payment:</span><strong id="resSaved" style="color:var(--green-light)">—</strong></div>
+        <div class="result-tip" id="calcTip"></div>
       </div>
     </div>
   </section>
@@ -145,20 +288,60 @@
   </footer>
 
   <script>
+    // Live budget calculator
+    function updateBudget() {
+      let income = 0, expenses = 0;
+      document.querySelectorAll('.income-field').forEach(i => income += parseFloat(i.value)||0);
+      document.querySelectorAll('.expense-field').forEach(i => expenses += parseFloat(i.value)||0);
+      const remaining = income - expenses;
+      document.getElementById('totalIncome').textContent = income.toLocaleString('en-GB', {minimumFractionDigits:2, maximumFractionDigits:2});
+      document.getElementById('totalExpenses').textContent = expenses.toLocaleString('en-GB', {minimumFractionDigits:2, maximumFractionDigits:2});
+      const el = document.getElementById('remaining');
+      el.textContent = (remaining >= 0 ? '' : '-') + Math.abs(remaining).toLocaleString('en-GB', {minimumFractionDigits:2, maximumFractionDigits:2});
+      el.className = 'balance-amount ' + (remaining > 5 ? 'positive' : remaining < -5 ? 'negative' : 'zero');
+    }
+    document.querySelectorAll('.income-field, .expense-field').forEach(i => i.addEventListener('input', updateBudget));
+
+    // Debt calculator
+    function calcMonths(balance, monthlyRate, payment) {
+      if (payment <= balance * monthlyRate) return Infinity;
+      return Math.ceil(-Math.log(1 - (balance * monthlyRate) / payment) / Math.log(1 + monthlyRate));
+    }
     function calculateDebt() {
+      const sym = document.getElementById('currency').value;
       const balance = parseFloat(document.getElementById('balance').value);
-      const rate = parseFloat(document.getElementById('rate').value) / 100 / 12;
+      const annualRate = parseFloat(document.getElementById('rate').value);
       const payment = parseFloat(document.getElementById('payment').value);
-      if (!balance || !rate || !payment || payment <= balance * rate) {
+      const extra = parseFloat(document.getElementById('extra').value) || 0;
+      const monthlyRate = annualRate / 100 / 12;
+
+      if (!balance || !annualRate || !payment || payment <= balance * monthlyRate) {
         alert('Please check your numbers. Your monthly payment must be higher than the monthly interest charge.');
         return;
       }
-      const months = Math.ceil(-Math.log(1 - (balance * rate) / payment) / Math.log(1 + rate));
+
+      const months = calcMonths(balance, monthlyRate, payment);
       const totalPaid = payment * months;
       const totalInterest = totalPaid - balance;
-      document.getElementById('resMonths').textContent = months + ' months (' + (months/12).toFixed(1) + ' years)';
-      document.getElementById('resInterest').textContent = '$' + totalInterest.toFixed(2);
-      document.getElementById('resTotal').textContent = '$' + totalPaid.toFixed(2);
+
+      document.getElementById('resMonths').textContent = months + ' months (' + (months/12).toFixed(1) + ' yrs)';
+      document.getElementById('resInterest').textContent = sym + totalInterest.toFixed(2);
+
+      if (extra > 0) {
+        const monthsExtra = calcMonths(balance, monthlyRate, payment + extra);
+        const totalPaidExtra = (payment + extra) * monthsExtra;
+        const totalInterestExtra = totalPaidExtra - balance;
+        const saved = totalInterest - totalInterestExtra;
+        document.getElementById('resMonthsExtra').textContent = monthsExtra + ' months (' + (monthsExtra/12).toFixed(1) + ' yrs)';
+        document.getElementById('resSaved').textContent = sym + saved.toFixed(2) + ' saved!';
+        document.getElementById('extraRow').style.display = 'flex';
+        document.getElementById('extraSavingRow').style.display = 'flex';
+        document.getElementById('calcTip').textContent = `By paying an extra ${sym}${extra}/month you pay off ${months - monthsExtra} months earlier and save ${sym}${saved.toFixed(2)} in interest. That's real money back in your pocket.`;
+      } else {
+        document.getElementById('extraRow').style.display = 'none';
+        document.getElementById('extraSavingRow').style.display = 'none';
+        document.getElementById('calcTip').textContent = `Try adding even ${sym}20–${sym}50 extra per month in the field above to see how much faster you could be free.`;
+      }
       document.getElementById('calcResult').classList.add('show');
     }
   </script>
