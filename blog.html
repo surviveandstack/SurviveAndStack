@@ -3,52 +3,52 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Articles & Guides | SurviveAndStack</title>
-  <meta name="description" content="Free money guides for people escaping debt and building wealth from zero. Practical, honest, no fluff."/>
+  <title>Free Money Guides & Articles | SurviveAndStack</title>
+  <meta name="description" content="Free guides on debt payoff, budgeting, credit repair, saving and investing. Written for real people in plain English."/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root { --black:#0a0a0a; --white:#f5f0e8; --gold:#c9a84c; --gold-light:#e8c96a; --green:#2d6a4f; --gray:#1a1a1a; --gray-mid:#2e2e2e; --gray-text:#888; }
-    body { background:var(--black); color:var(--white); font-family:'DM Sans',sans-serif; font-weight:300; line-height:1.7; }
-    nav { position:fixed; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:1.2rem 4rem; background:rgba(10,10,10,0.92); backdrop-filter:blur(12px); border-bottom:1px solid rgba(201,168,76,0.15); }
-    .nav-logo { font-family:'Syne',sans-serif; font-weight:800; font-size:1.3rem; color:var(--gold); text-decoration:none; }
-    .nav-logo span { color:var(--white); }
-    .nav-links { display:flex; gap:2.5rem; list-style:none; }
-    .nav-links a { color:var(--gray-text); text-decoration:none; font-size:0.85rem; letter-spacing:0.08em; text-transform:uppercase; transition:color 0.2s; }
-    .nav-links a:hover { color:var(--gold); }
-    .nav-cta { background:var(--gold); color:var(--black); padding:0.6rem 1.4rem; border-radius:2px; font-family:'Syne',sans-serif; font-weight:700; font-size:0.8rem; text-transform:uppercase; text-decoration:none; }
-    .page-header { padding:10rem 4rem 4rem; border-bottom:1px solid rgba(245,240,232,0.08); }
-    .page-tag { font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); margin-bottom:1rem; display:flex; align-items:center; gap:0.8rem; }
-    .page-tag::before { content:''; display:block; width:1.5rem; height:1px; background:var(--gold); }
-    h1 { font-family:'Syne',sans-serif; font-weight:800; font-size:clamp(2.5rem,5vw,4rem); line-height:1.05; letter-spacing:-0.02em; }
-    .page-header p { color:var(--gray-text); margin-top:1rem; max-width:50ch; }
-
-    /* ARTICLE GRID */
-    .articles-section { padding:5rem 4rem; }
-    .articles-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(320px,1fr)); gap:1.5rem; margin-top:3rem; }
-    .article-card { background:var(--gray); border:1px solid rgba(245,240,232,0.06); padding:2rem; border-radius:2px; text-decoration:none; color:inherit; transition:border-color 0.3s; display:block; }
-    .article-card:hover { border-color:rgba(201,168,76,0.4); }
-    .article-tag { font-size:0.7rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold); margin-bottom:1rem; }
-    .article-card h2 { font-family:'Syne',sans-serif; font-weight:700; font-size:1.2rem; line-height:1.3; margin-bottom:0.8rem; }
-    .article-card p { font-size:0.88rem; color:var(--gray-text); line-height:1.6; }
-    .article-meta { font-size:0.75rem; color:var(--gray-text); margin-top:1.5rem; padding-top:1rem; border-top:1px solid rgba(245,240,232,0.08); display:flex; justify-content:space-between; }
-    .read-more { color:var(--gold); font-size:0.8rem; letter-spacing:0.08em; text-transform:uppercase; }
-
-    /* FULL ARTICLE */
-    .article-full { padding:5rem 4rem; max-width:760px; }
-    .article-full h1 { font-family:'Syne',sans-serif; font-weight:800; font-size:clamp(2rem,4vw,3rem); line-height:1.1; margin-bottom:1.5rem; }
-    .article-full h3 { font-family:'Syne',sans-serif; font-weight:700; font-size:1.2rem; margin:2rem 0 0.8rem; color:var(--gold); }
-    .article-full p { color:rgba(245,240,232,0.82); margin-bottom:1.2rem; }
-    .article-full ul { margin:0.5rem 0 1.2rem 1.5rem; color:rgba(245,240,232,0.82); }
-    .article-full ul li { margin-bottom:0.5rem; }
-    .article-divider { border:none; border-top:1px solid rgba(245,240,232,0.08); margin:3rem 0; }
-
-    footer { background:var(--gray); padding:3rem 4rem; border-top:1px solid rgba(245,240,232,0.08); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; }
-    footer a { color:var(--gray-text); text-decoration:none; font-size:0.82rem; }
-    footer a:hover { color:var(--gold); }
-    .footer-links { display:flex; gap:2rem; }
-    @media(max-width:768px) { nav { padding:1rem 1.5rem; } .nav-links { display:none; } .page-header,.articles-section,.article-full,footer { padding-left:1.5rem; padding-right:1.5rem; } }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{--black:#0a0a0a;--white:#f5f0e8;--gold:#c9a84c;--gold-light:#e8c96a;--green:#2d6a4f;--green-light:#52b788;--gray:#1a1a1a;--gray-mid:#2e2e2e;--gray-text:#888;}
+    body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;font-weight:300;line-height:1.7;}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 4rem;background:rgba(10,10,10,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,0.15);}
+    .nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.3rem;color:var(--gold);text-decoration:none;}
+    .nav-logo span{color:var(--white);}
+    .nav-links{display:flex;gap:2.5rem;list-style:none;}
+    .nav-links a{color:var(--gray-text);text-decoration:none;font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s;}
+    .nav-links a:hover{color:var(--gold);}
+    .nav-cta{background:var(--gold);color:var(--black);padding:0.6rem 1.4rem;border-radius:2px;font-family:'Syne',sans-serif;font-weight:700;font-size:0.8rem;text-transform:uppercase;text-decoration:none;}
+    .page-header{padding:10rem 4rem 4rem;border-bottom:1px solid rgba(245,240,232,0.08);}
+    .page-tag{font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:flex;align-items:center;gap:0.8rem;}
+    .page-tag::before{content:'';display:block;width:1.5rem;height:1px;background:var(--gold);}
+    h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2.5rem,5vw,4rem);line-height:1.05;letter-spacing:-0.02em;}
+    .page-header p{color:var(--gray-text);margin-top:1rem;max-width:52ch;}
+    .articles-section{padding:5rem 4rem;}
+    .articles-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.5rem;margin-top:2rem;}
+    .article-card{background:var(--gray);border:1px solid rgba(245,240,232,0.06);padding:2rem;border-radius:2px;text-decoration:none;color:inherit;transition:border-color 0.3s;display:block;}
+    .article-card:hover{border-color:rgba(201,168,76,0.4);}
+    .article-tag{font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+    .article-card h2{font-family:'Syne',sans-serif;font-weight:700;font-size:1.2rem;line-height:1.3;margin-bottom:0.8rem;}
+    .article-card p{font-size:0.88rem;color:var(--gray-text);line-height:1.6;}
+    .article-meta{font-size:0.75rem;color:var(--gray-text);margin-top:1.5rem;padding-top:1rem;border-top:1px solid rgba(245,240,232,0.08);display:flex;justify-content:space-between;}
+    .read-more{color:var(--gold);}
+    .article-full{padding:0 4rem 5rem;max-width:780px;}
+    .article-full + .article-full{padding-top:2rem;}
+    .article-divider{border:none;border-top:1px solid rgba(245,240,232,0.08);margin:0 4rem;}
+    .article-full .art-tag{font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+    .article-full h2{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.8rem,3.5vw,2.8rem);line-height:1.1;margin-bottom:1.5rem;}
+    .article-full h3{font-family:'Syne',sans-serif;font-weight:700;font-size:1.2rem;margin:2.2rem 0 0.8rem;color:var(--gold);}
+    .article-full p{color:rgba(245,240,232,0.82);margin-bottom:1.2rem;font-size:1rem;}
+    .article-full ul{margin:0.5rem 0 1.2rem 1.5rem;color:rgba(245,240,232,0.82);}
+    .article-full ul li{margin-bottom:0.5rem;}
+    .article-full .article-cta{margin-top:2rem;padding:1.5rem 2rem;background:var(--gray);border-left:3px solid var(--gold);border-radius:0 2px 2px 0;}
+    .article-full .article-cta p{color:var(--gray-text);margin:0 0 0.8rem;}
+    .article-full .article-cta a{display:inline-block;background:var(--gold);color:var(--black);padding:0.6rem 1.4rem;border-radius:2px;font-family:'Syne',sans-serif;font-weight:700;font-size:0.8rem;text-decoration:none;}
+    footer{background:var(--gray);padding:3rem 4rem;border-top:1px solid rgba(245,240,232,0.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+    footer a{color:var(--gray-text);text-decoration:none;font-size:0.82rem;}
+    footer a:hover{color:var(--gold);}
+    .footer-links{display:flex;gap:2rem;}
+    @media(max-width:768px){nav{padding:1rem 1.5rem;}.nav-links{display:none;}.page-header,.articles-section,.article-full,.article-divider,footer{padding-left:1.5rem;padding-right:1.5rem;}}
   </style>
 </head>
 <body>
@@ -61,120 +61,129 @@
       <li><a href="/about.html">About</a></li>
       <li><a href="/contact.html">Contact</a></li>
     </ul>
-    <a class="nav-cta" href="/debt.html">Get Free Help</a>
+    <a class="nav-cta" href="/free-guide.html">Free Guide</a>
   </nav>
 
   <div class="page-header">
     <p class="page-tag">Free guides</p>
     <h1>Articles that actually help.</h1>
-    <p>Practical money guides for people escaping debt and building from zero. No fluff, no gatekeeping.</p>
+    <p>Practical money guides written for people escaping debt and building from zero. No jargon, no gatekeeping — just the information you needed someone to give you.</p>
   </div>
 
-  <!-- ARTICLE CARDS -->
   <section class="articles-section">
     <div class="articles-grid">
       <div class="article-card">
         <p class="article-tag">Debt Strategy</p>
         <h2>Debt Snowball vs Avalanche: Which Method Gets You Free Faster?</h2>
-        <p>Two proven strategies, one major decision. We break down exactly which method fits your situation and psychology.</p>
+        <p>Two proven strategies, one major decision. The full breakdown of which method fits your situation and psychology — with real numbers.</p>
         <div class="article-meta"><span>5 min read</span><span class="read-more">Read below ↓</span></div>
       </div>
       <div class="article-card">
         <p class="article-tag">Budgeting</p>
-        <h2>Zero Based Budgeting: How to Give Every Dollar a Job</h2>
-        <p>The budgeting method that works when everything else fails. Simple, powerful, and completely free to implement.</p>
+        <h2>Zero Based Budgeting: How to Give Every Pound a Job</h2>
+        <p>The budgeting method that works when everything else fails. Simple, powerful, and free to implement today.</p>
         <div class="article-meta"><span>4 min read</span><span class="read-more">Read below ↓</span></div>
       </div>
       <div class="article-card">
         <p class="article-tag">Savings Apps</p>
         <h2>5 Apps That Automatically Save Money For You</h2>
-        <p>Set these up once and watch your savings grow without thinking about it. Most are completely free to use.</p>
+        <p>Set these up once and your savings grow without you thinking about it — international, UK, and US options included.</p>
         <div class="article-meta"><span>3 min read</span><span class="read-more">Read below ↓</span></div>
       </div>
     </div>
   </section>
 
-  <!-- FULL ARTICLE 1 -->
+  <!-- ARTICLE 1 -->
   <article class="article-full">
-    <p class="article-tag" style="font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;">Debt Strategy · 5 min read</p>
-    <h1>Debt Snowball vs Avalanche: Which Method Gets You Free Faster?</h1>
-    <p>If you're trying to pay off debt, you've probably heard of two main strategies: the Debt Snowball and the Debt Avalanche. Both work. Both have helped thousands of people get completely out of debt. The question is which one works better for you.</p>
+    <p class="art-tag">Debt Strategy · 5 min read</p>
+    <h2>Debt Snowball vs Avalanche: Which Method Gets You Free Faster?</h2>
+    <p>If you're trying to pay off debt you've probably come across two main strategies — the Debt Snowball and the Debt Avalanche. Both work. Both have helped thousands of people become completely debt free. The question is which one is right for you specifically.</p>
 
     <h3>What is the Debt Snowball?</h3>
-    <p>The Debt Snowball method, made popular by financial expert Dave Ramsey, focuses on paying off your smallest debt first regardless of interest rate. You make minimum payments on everything else and throw every extra dollar at your smallest balance. When that's gone you move to the next smallest and so on.</p>
-    <p>The psychology behind it is powerful. You get quick wins early. Paying off a debt completely feels amazing and keeps you motivated to keep going. Studies have shown that people who use this method are more likely to stick with their debt payoff plan all the way to the end.</p>
+    <p>The Snowball, popularised by Dave Ramsey, means paying off your smallest debt first regardless of interest rate. You make minimum payments on everything else and throw every spare pound at the smallest balance. When it's gone you roll that payment onto the next smallest. The momentum builds like a snowball rolling downhill.</p>
+    <p>The psychology behind it is genuinely powerful. Getting a debt fully paid off — even a small one — creates a feeling of progress that keeps you going. Studies show people using this method are significantly more likely to follow through to the end.</p>
 
     <h3>What is the Debt Avalanche?</h3>
-    <p>The Debt Avalanche method is mathematically smarter. Instead of targeting the smallest balance, you target the debt with the highest interest rate first. You still make minimum payments on everything else but your extra money goes toward the most expensive debt first.</p>
-    <p>Over time this approach saves you more money in interest and technically gets you out of debt faster on paper. The downside is it can take longer to see your first debt fully paid off which can feel discouraging for some people.</p>
+    <p>The Avalanche means targeting your highest interest rate first, regardless of balance. Everything else gets minimum payments. Once the highest rate debt is cleared you move to the next highest rate.</p>
+    <p>Mathematically this is the more efficient method — you pay less total interest and technically get out of debt faster. The downside is that high-interest debts are often large balances, so it can take a long time before you see your first debt fully paid off. That can feel discouraging.</p>
 
-    <h3>Which Should You Use?</h3>
-    <p>Here's the honest answer: the best method is the one you will actually stick to. If motivation is your biggest challenge use the Snowball. If you're disciplined and want to save the most money use the Avalanche.</p>
-    <p>Many people start with the Snowball to build momentum and then switch to the Avalanche once they're in the habit. That's a completely valid approach.</p>
+    <h3>Which should you use?</h3>
+    <p>The honest answer is whichever one you will actually stick to. A good plan you follow beats a perfect plan you abandon. If you need early motivation, use the Snowball. If you're disciplined and want to save the most money, use the Avalanche. Many people start with the Snowball and switch to the Avalanche once they have momentum — that's a completely valid approach.</p>
 
-    <h3>Getting Started Today</h3>
+    <h3>Getting started today</h3>
     <ul>
-      <li>List all your debts with their balances and interest rates</li>
-      <li>Choose your method: smallest balance first or highest interest first</li>
-      <li>Set up minimum payments on all debts automatically</li>
-      <li>Direct every extra dollar to your target debt</li>
-      <li>Celebrate every debt you eliminate — it matters</li>
-    </ul>
-    <p>The most important thing is to start. Both methods beat doing nothing by a massive margin.</p>
-  </article>
-
-  <hr class="article-divider" style="margin:0 4rem;"/>
-
-  <!-- FULL ARTICLE 2 -->
-  <article class="article-full">
-    <p class="article-tag" style="font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;">Budgeting · 4 min read</p>
-    <h1>Zero Based Budgeting: How to Give Every Dollar a Job</h1>
-    <p>Most budgets fail because they're vague. You know roughly what you earn and you try not to spend too much. Zero based budgeting is different. It's precise, intentional, and it works even when money is extremely tight.</p>
-
-    <h3>What is Zero Based Budgeting?</h3>
-    <p>Zero based budgeting means your income minus your expenses equals zero. Every single dollar you earn gets assigned a specific purpose before the month begins. That doesn't mean you spend everything — saving and debt payoff are part of the budget too. It means every dollar has a job.</p>
-
-    <h3>How to Set It Up</h3>
-    <ul>
-      <li><strong>Step 1:</strong> Write down your total monthly income after tax</li>
-      <li><strong>Step 2:</strong> List every fixed expense — rent, utilities, subscriptions, minimum debt payments</li>
-      <li><strong>Step 3:</strong> List variable expenses — food, transport, clothing, entertainment</li>
-      <li><strong>Step 4:</strong> Add a savings line and a debt payoff line</li>
-      <li><strong>Step 5:</strong> Keep subtracting until you reach exactly zero</li>
+      <li>List all your debts with balances, interest rates, and minimum payments</li>
+      <li>Choose your method and write it down — commit to it</li>
+      <li>Set up direct debits for every minimum payment so nothing gets missed</li>
+      <li>Direct every extra pound at your target debt</li>
+      <li>Celebrate every debt you fully clear — it matters more than it sounds</li>
     </ul>
 
-    <h3>What If There's Not Enough?</h3>
-    <p>If your expenses are more than your income, something has to go. Start with subscriptions you can cut, eating out, and any non-essential spending. It won't feel good at first but this is the process that actually changes your situation.</p>
-
-    <h3>Free Tools to Help</h3>
-    <p>You don't need fancy software. A free spreadsheet works perfectly. We have a free budget template available on our tools page that you can download and start using today. Apps like EveryDollar also offer a free version built specifically for zero based budgeting.</p>
-    <p>The goal isn't perfection in month one. The goal is awareness. Once you know exactly where your money is going you have the power to change it.</p>
+    <div class="article-cta">
+      <p>Want to see exactly how long it will take and how much you'll save? Use our free calculator.</p>
+      <a href="/tools.html#calc-tool">Try the Free Calculator →</a>
+    </div>
   </article>
 
-  <hr class="article-divider" style="margin:0 4rem;"/>
+  <hr class="article-divider"/>
 
-  <!-- FULL ARTICLE 3 -->
+  <!-- ARTICLE 2 -->
   <article class="article-full">
-    <p class="article-tag" style="font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;">Savings Apps · 3 min read</p>
-    <h1>5 Apps That Automatically Save Money For You</h1>
-    <p>The hardest part of saving money is remembering to do it. These apps solve that problem by automating the process entirely. Set them up once and your savings grow while you focus on everything else.</p>
+    <p class="art-tag">Budgeting · 4 min read</p>
+    <h2>Zero Based Budgeting: How to Give Every Pound a Job</h2>
+    <p>Most budgets fail because they're too vague. You know roughly what you earn and you try not to spend too much. Zero based budgeting is completely different. It's precise, intentional, and it works even when money is extremely tight.</p>
+
+    <h3>What is zero based budgeting?</h3>
+    <p>Zero based budgeting means your income minus your expenses equals zero before the month even starts. Every single pound you earn gets assigned a specific purpose. That doesn't mean spending everything — saving and debt payments are part of the budget too. It means nothing is left unaccounted for.</p>
+
+    <h3>How to set it up in 20 minutes</h3>
+    <ul>
+      <li>Write down your total monthly income after tax</li>
+      <li>List every fixed expense — rent, utilities, subscriptions, minimum debt payments</li>
+      <li>List variable expenses — food, transport, clothing, entertainment</li>
+      <li>Add a savings line and a debt payoff line</li>
+      <li>Keep adjusting until income minus everything equals zero</li>
+    </ul>
+
+    <h3>What if there's not enough?</h3>
+    <p>If your expenses are more than your income, something has to go. Start with subscriptions you can pause, eating out, and any non-essential spending. It won't feel comfortable at first. That discomfort is the process working — it shows you exactly where the problem is.</p>
+
+    <h3>The most important thing to know</h3>
+    <p>Month one will be messy. Numbers will be wrong, things will be forgotten, life will interfere. That's normal and expected. The goal in month one isn't perfection — it's awareness. Once you know where your money actually goes you have the power to change it.</p>
+
+    <div class="article-cta">
+      <p>Build your zero based budget right now using our free interactive template.</p>
+      <a href="/tools.html#budget-tool">Use the Free Budget Template →</a>
+    </div>
+  </article>
+
+  <hr class="article-divider"/>
+
+  <!-- ARTICLE 3 -->
+  <article class="article-full">
+    <p class="art-tag">Savings Apps · 3 min read</p>
+    <h2>5 Apps That Automatically Save Money For You</h2>
+    <p>The hardest part of saving money is remembering to do it consistently. These apps remove that barrier completely. Set them up once and your savings grow in the background while you get on with life.</p>
 
     <h3>1. Wally — Best Free Global App</h3>
-    <p>Wally works in over 70 countries and connects to more than 15,000 banks worldwide. It tracks your money automatically using AI, predicts when bills are due, and sends you alerts before they hit. Completely free — no matter where you live.</p>
+    <p>Wally works in over 70 countries and connects to more than 15,000 banks worldwide. It tracks your spending automatically using AI, predicts when bills are due, and alerts you before they hit. Completely free wherever you live. Find it by searching 'Wally' on your app store.</p>
 
     <h3>2. Wallet by BudgetBakers — Best for Multi-Currency</h3>
-    <p>If you deal with more than one currency, Wallet by BudgetBakers is the one to get. It connects to banks worldwide, updates exchange rates automatically, and gives you a clear picture of all your accounts in one place. A free plan is available.</p>
+    <p>If you deal with more than one currency or bank in multiple countries, Wallet by BudgetBakers is ideal. It connects to banks worldwide, updates exchange rates automatically, and gives you a clear picture of all your accounts together. A free plan is available at budgetbakers.com.</p>
 
     <h3>3. Plum — Best for UK Users</h3>
-    <p>Plum connects to your UK bank account and automatically saves small amounts when it works out you can afford it. It is smart enough to never leave you short before payday. It quietly builds your savings in the background while you get on with life.</p>
+    <p>Plum connects directly to UK bank accounts and automatically saves small amounts when it works out you can afford it. It is smart enough to never leave you short before payday — it monitors your balance constantly. Free to start at withplum.com.</p>
 
     <h3>4. Acorns — Best for US Users</h3>
-    <p>Acorns rounds up every US purchase to the nearest dollar and invests the spare change automatically. Spend $3.60 on coffee and Acorns invests $0.40 for you. It adds up faster than you'd expect and you barely notice it leaving your account.</p>
+    <p>Acorns rounds up every US purchase to the nearest dollar and automatically invests the spare change. Spend $3.60 on coffee and Acorns invests $0.40 for you without any action on your part. Free to start at acorns.com.</p>
 
     <h3>5. Credit Karma — Best Free Credit Tracker</h3>
-    <p>Credit Karma shows your credit score for free with no credit card required. Available in both the UK at creditkarma.co.uk and the US at creditkarma.com. It tells you exactly what is hurting your score and what specific steps will improve it.</p>
+    <p>Credit Karma shows your credit score for free with no credit card required. Available in the UK at creditkarma.co.uk and the US at creditkarma.com. It tells you exactly what is hurting your score and gives you specific steps to improve it week by week.</p>
 
-    <p>You don't need to use all five. Pick one that fits how you already spend and set it up today. Automating even a small amount of saving is infinitely better than saving nothing.</p>
+    <div class="article-cta">
+      <p>Download the full free guide to budgeting apps — international, UK, and US options covered.</p>
+      <a href="https://linktr.ee/SurviveAndStack" target="_blank">Download Free Apps Guide →</a>
+    </div>
   </article>
 
   <footer>

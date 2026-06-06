@@ -3,38 +3,86 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Debt Help | SurviveAndStack</title>
-  <meta name="description" content="Free debt help resources. Practical strategies to escape debt, fix your credit, and start building financial freedom."/>
+  <title>Debt Help — Your 5-Step Escape Plan | SurviveAndStack</title>
+  <meta name="description" content="Your complete debt escape plan. Snowball vs avalanche, emergency funds, budgeting and finding hidden money — everything you need to get out of debt."/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root { --black:#0a0a0a; --white:#f5f0e8; --gold:#c9a84c; --gold-light:#e8c96a; --green:#2d6a4f; --green-light:#52b788; --gray:#1a1a1a; --gray-mid:#2e2e2e; --gray-text:#888; }
-    body { background:var(--black); color:var(--white); font-family:'DM Sans',sans-serif; font-weight:300; line-height:1.7; }
-    nav { position:fixed; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:1.2rem 4rem; background:rgba(10,10,10,0.92); backdrop-filter:blur(12px); border-bottom:1px solid rgba(201,168,76,0.15); }
-    .nav-logo { font-family:'Syne',sans-serif; font-weight:800; font-size:1.3rem; color:var(--gold); text-decoration:none; }
-    .nav-logo span { color:var(--white); }
-    .nav-links { display:flex; gap:2.5rem; list-style:none; }
-    .nav-links a { color:var(--gray-text); text-decoration:none; font-size:0.85rem; letter-spacing:0.08em; text-transform:uppercase; transition:color 0.2s; }
-    .nav-links a:hover { color:var(--gold); }
-    .nav-cta { background:var(--gold); color:var(--black); padding:0.6rem 1.4rem; border-radius:2px; font-family:'Syne',sans-serif; font-weight:700; font-size:0.8rem; text-transform:uppercase; text-decoration:none; }
-    .page-header { padding:10rem 4rem 4rem; background:linear-gradient(135deg, rgba(45,106,79,0.15) 0%, transparent 60%); border-bottom:1px solid rgba(245,240,232,0.08); }
-    .page-tag { font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--green-light); margin-bottom:1rem; display:flex; align-items:center; gap:0.8rem; }
-    .page-tag::before { content:''; display:block; width:1.5rem; height:1px; background:var(--green-light); }
-    h1 { font-family:'Syne',sans-serif; font-weight:800; font-size:clamp(2.5rem,5vw,4rem); line-height:1.05; letter-spacing:-0.02em; max-width:16ch; }
-    .page-header p { color:var(--gray-text); margin-top:1rem; max-width:50ch; }
-    .steps-section { padding:5rem 4rem; }
-    .steps-section h2 { font-family:'Syne',sans-serif; font-weight:800; font-size:clamp(1.8rem,3vw,2.5rem); margin-bottom:3rem; }
-    .steps-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.5rem; }
-    .step-card { background:var(--gray); border:1px solid rgba(245,240,232,0.06); padding:2rem; border-radius:2px; position:relative; }
-    .step-num { font-family:'Syne',sans-serif; font-weight:800; font-size:3rem; color:rgba(201,168,76,0.15); line-height:1; margin-bottom:1rem; }
-    .step-card h3 { font-family:'Syne',sans-serif; font-weight:700; font-size:1rem; margin-bottom:0.6rem; }
-    .step-card p { font-size:0.88rem; color:var(--gray-text); }
-    footer { background:var(--gray); padding:3rem 4rem; border-top:1px solid rgba(245,240,232,0.08); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; }
-    footer a { color:var(--gray-text); text-decoration:none; font-size:0.82rem; }
-    footer a:hover { color:var(--gold); }
-    .footer-links { display:flex; gap:2rem; }
-    @media(max-width:768px) { nav { padding:1rem 1.5rem; } .nav-links { display:none; } .page-header,.steps-section,.resources-section,footer { padding-left:1.5rem; padding-right:1.5rem; } }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{--black:#0a0a0a;--white:#f5f0e8;--gold:#c9a84c;--gold-light:#e8c96a;--green:#2d6a4f;--green-light:#52b788;--red:#c1121f;--gray:#1a1a1a;--gray-mid:#2e2e2e;--gray-text:#888;}
+    body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;font-weight:300;line-height:1.7;}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 4rem;background:rgba(10,10,10,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,0.15);}
+    .nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.3rem;color:var(--gold);text-decoration:none;}
+    .nav-logo span{color:var(--white);}
+    .nav-links{display:flex;gap:2.5rem;list-style:none;}
+    .nav-links a{color:var(--gray-text);text-decoration:none;font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s;}
+    .nav-links a:hover{color:var(--gold);}
+    .nav-cta{background:var(--gold);color:var(--black);padding:0.6rem 1.4rem;border-radius:2px;font-family:'Syne',sans-serif;font-weight:700;font-size:0.8rem;text-transform:uppercase;text-decoration:none;}
+    section{padding:5rem 4rem;}
+    .alt{background:var(--gray);}
+    .page-header{padding:10rem 4rem 4rem;background:linear-gradient(135deg,rgba(45,106,79,0.15) 0%,transparent 60%);border-bottom:1px solid rgba(245,240,232,0.08);}
+    .page-tag{font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--green-light);margin-bottom:1rem;display:flex;align-items:center;gap:0.8rem;}
+    .page-tag::before{content:'';display:block;width:1.5rem;height:1px;background:var(--green-light);}
+    h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2.5rem,5vw,4rem);line-height:1.05;letter-spacing:-0.02em;max-width:18ch;}
+    .page-header p{color:var(--gray-text);margin-top:1rem;max-width:52ch;line-height:1.7;}
+    h2{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.8rem,3vw,2.6rem);margin-bottom:0.6rem;}
+    .section-tag{font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:flex;align-items:center;gap:0.8rem;}
+    .section-tag::before{content:'';display:block;width:1.5rem;height:1px;background:var(--gold);}
+    .section-sub{color:var(--gray-text);margin-bottom:3rem;max-width:52ch;}
+
+    /* METHODS */
+    .methods-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2.5rem;}
+    .method-card{background:var(--black);border:1px solid rgba(245,240,232,0.06);padding:2.5rem;border-radius:2px;position:relative;}
+    .method-card.featured{border-color:rgba(201,168,76,0.3);}
+    .method-badge{position:absolute;top:1.5rem;right:1.5rem;background:var(--gold);color:var(--black);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.25rem 0.7rem;border-radius:2px;font-family:'Syne',sans-serif;font-weight:700;}
+    .method-card h3{font-family:'Syne',sans-serif;font-weight:700;font-size:1.2rem;margin-bottom:0.8rem;}
+    .method-card p{font-size:0.9rem;color:var(--gray-text);line-height:1.7;margin-bottom:1rem;}
+    .method-card .best-for{font-size:0.82rem;color:var(--green-light);font-weight:500;}
+
+    /* STEPS */
+    .steps-list{display:flex;flex-direction:column;gap:0;margin-top:2.5rem;}
+    .step-item{display:grid;grid-template-columns:80px 1fr;gap:2rem;padding:2.5rem 0;border-bottom:1px solid rgba(245,240,232,0.06);}
+    .step-item:last-child{border:none;}
+    .step-num{font-family:'Syne',sans-serif;font-size:3.5rem;font-weight:800;color:rgba(201,168,76,0.2);line-height:1;padding-top:0.2rem;}
+    .step-content h3{font-family:'Syne',sans-serif;font-weight:700;font-size:1.1rem;margin-bottom:0.6rem;}
+    .step-content p{font-size:0.9rem;color:var(--gray-text);line-height:1.7;margin-bottom:0.8rem;}
+    .step-content .step-tip{font-size:0.85rem;color:var(--green-light);font-style:italic;}
+
+    /* INTEREST CALCULATOR EXPLAINER */
+    .interest-box{background:var(--black);border:1px solid rgba(193,18,31,0.25);border-radius:2px;padding:2.5rem;margin-top:2.5rem;}
+    .interest-box h3{font-family:'Syne',sans-serif;font-weight:700;font-size:1.1rem;color:var(--red);margin-bottom:1rem;}
+    .interest-row{display:flex;justify-content:space-between;align-items:center;padding:0.8rem 0;border-bottom:1px solid rgba(245,240,232,0.05);font-size:0.9rem;}
+    .interest-row:last-child{border:none;}
+    .interest-row strong{font-family:'Syne',sans-serif;color:var(--red);}
+    .interest-row.saved strong{color:var(--green-light);}
+
+    /* RESOURCES */
+    .resource-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin-top:2.5rem;}
+    .resource-card{background:var(--black);border:1px solid rgba(245,240,232,0.06);padding:1.8rem;border-radius:2px;text-decoration:none;color:inherit;transition:border-color 0.3s;display:flex;gap:1rem;align-items:flex-start;}
+    .resource-card:hover{border-color:rgba(201,168,76,0.35);}
+    .resource-icon{font-size:1.6rem;flex-shrink:0;}
+    .res-tag{font-size:0.67rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:0.4rem;}
+    .resource-card h4{font-family:'Syne',sans-serif;font-weight:700;font-size:0.95rem;margin-bottom:0.3rem;}
+    .resource-card p{font-size:0.82rem;color:var(--gray-text);line-height:1.5;}
+
+    /* CTA */
+    .guide-cta{background:var(--green);padding:4rem;display:flex;justify-content:space-between;align-items:center;gap:3rem;flex-wrap:wrap;}
+    .guide-cta h2{color:#fff;font-family:'Syne',sans-serif;font-weight:800;font-size:1.8rem;max-width:30ch;}
+    .guide-cta p{color:rgba(255,255,255,0.7);margin-top:0.5rem;max-width:40ch;}
+    .btn-gold{display:inline-block;background:var(--gold);color:var(--black);padding:1rem 2.2rem;border-radius:2px;font-family:'Syne',sans-serif;font-weight:700;font-size:0.9rem;letter-spacing:0.05em;text-transform:uppercase;text-decoration:none;transition:background 0.2s;white-space:nowrap;}
+    .btn-gold:hover{background:var(--gold-light);}
+
+    footer{background:var(--gray);padding:3rem 4rem;border-top:1px solid rgba(245,240,232,0.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+    footer a{color:var(--gray-text);text-decoration:none;font-size:0.82rem;}
+    footer a:hover{color:var(--gold);}
+    .footer-links{display:flex;gap:2rem;}
+    @media(max-width:768px){
+      nav{padding:1rem 1.5rem;}.nav-links{display:none;}
+      .page-header,section,footer,.guide-cta{padding-left:1.5rem;padding-right:1.5rem;}
+      .methods-grid{grid-template-columns:1fr;}
+      .step-item{grid-template-columns:50px 1fr;gap:1rem;}
+      .guide-cta{flex-direction:column;}
+    }
   </style>
 </head>
 <body>
@@ -47,45 +95,128 @@
       <li><a href="/about.html">About</a></li>
       <li><a href="/contact.html">Contact</a></li>
     </ul>
-    <a class="nav-cta" href="/contact.html">Contact Us</a>
+    <a class="nav-cta" href="/free-guide.html">Free Guide</a>
   </nav>
 
   <div class="page-header">
-    <p class="page-tag">Your escape plan</p>
-    <h1>Getting out of debt is possible. Here's how.</h1>
-    <p>Step by step strategies for people who are done letting debt control their life. Free, practical, and built for real situations.</p>
+    <p class="page-tag">Your complete debt escape plan</p>
+    <h1>Everything you need to get out of debt — in one place.</h1>
+    <p>This page covers the two proven payoff methods, how interest actually works against you, and the exact steps to take this week. No fluff, no glossed-over details.</p>
   </div>
 
-  <section class="steps-section">
-    <h2>Your 5 Step Debt Escape Plan</h2>
-    <div class="steps-grid">
-      <div class="step-card">
+  <!-- SNOWBALL VS AVALANCHE — deep dive, lives only here -->
+  <section>
+    <p class="section-tag">The two methods</p>
+    <h2>Snowball or Avalanche — which one is right for you?</h2>
+    <p class="section-sub">Both work. The difference is psychology vs mathematics. Here's the honest breakdown so you can choose without guessing.</p>
+    <div class="methods-grid">
+      <div class="method-card featured">
+        <span class="method-badge">Most popular</span>
+        <h3>🏔 The Debt Snowball</h3>
+        <p>Pay off your <strong>smallest balance first</strong>, regardless of interest rate. Make minimum payments on everything else. Once the smallest is gone, roll that payment onto the next one.</p>
+        <p>The quick wins keep you motivated. Crossing debts off your list creates momentum that carries you through the longer ones. Research shows people using this method are significantly more likely to finish debt free.</p>
+        <p class="best-for">Best for: Anyone who needs early motivation to keep going.</p>
+      </div>
+      <div class="method-card">
+        <h3>🌊 The Debt Avalanche</h3>
+        <p>Pay off your <strong>highest interest rate first</strong>, regardless of balance size. Make minimum payments on everything else. Once the highest rate is gone, move to the next.</p>
+        <p>Mathematically optimal — you pay less total interest and clear debt faster on paper. The downside is it can take longer to see your first debt fully paid off, which some people find discouraging.</p>
+        <p class="best-for">Best for: Disciplined people who want to save the most money overall.</p>
+      </div>
+    </div>
+
+    <!-- Interest explainer — unique to this page -->
+    <div class="interest-box">
+      <h3>⚠ Why the interest rate matters more than you think</h3>
+      <div class="interest-row"><span>£3,000 debt at 22% — paying minimums only</span><strong>£5,100+ total paid</strong></div>
+      <div class="interest-row"><span>£3,000 debt at 22% — paying an extra £50/month</span><strong>£3,800 total paid</strong></div>
+      <div class="interest-row saved"><span>What that extra £50/month saves you</span><strong>£1,300+ saved</strong></div>
+      <p style="margin-top:1rem;font-size:0.85rem;color:var(--gray-text);">Use our <a href="/tools.html#calc-tool" style="color:var(--gold);">free debt payoff calculator</a> to see your exact numbers.</p>
+    </div>
+  </section>
+
+  <!-- STEP BY STEP PLAN — deep version, homepage only has teaser -->
+  <section class="alt">
+    <p class="section-tag">Your action plan</p>
+    <h2>5 steps to start this week.</h2>
+    <p class="section-sub">Not someday. This week. Each step builds on the last — start at step 1 even if it feels obvious.</p>
+    <div class="steps-list">
+      <div class="step-item">
         <div class="step-num">01</div>
-        <h3>Know Your Numbers</h3>
-        <p>List every debt you have — balance, interest rate, minimum payment. You can't fight what you don't face. This step alone reduces anxiety.</p>
+        <div class="step-content">
+          <h3>Write down every single debt</h3>
+          <p>List every debt you have — credit cards, loans, buy now pay later, overdrafts, money owed to people. For each one write the balance, interest rate, and minimum monthly payment. Add them up. That total is your starting number.</p>
+          <p class="step-tip">It might feel awful to see the number. That's normal. Knowing it, is what gives you the power to change it.</p>
+        </div>
       </div>
-      <div class="step-card">
+      <div class="step-item">
         <div class="step-num">02</div>
-        <h3>Stop the Bleeding</h3>
-        <p>Cut any spending that isn't essential and stop adding to your debt immediately. No new credit card charges during the payoff period.</p>
+        <div class="step-content">
+          <h3>Build a small emergency fund first</h3>
+          <p>Before you throw everything at debt, save £500–£1,000 in a separate account. This one step stops a broken phone or unexpected bill from sending you right back into more debt. Sell unused items, cut one subscription, or do one no-spend week to get there faster.</p>
+          <p class="step-tip">Once you hit your target, stop saving and redirect everything to debt.</p>
+        </div>
       </div>
-      <div class="step-card">
+      <div class="step-item">
         <div class="step-num">03</div>
-        <h3>Build a Tiny Emergency Fund</h3>
-        <p>Save $500–$1,000 first before attacking debt hard. This prevents one unexpected expense from derailing everything.</p>
+        <div class="step-content">
+          <h3>Pick your payoff method and commit</h3>
+          <p>Choose snowball or avalanche from the section above. Set up minimum payment direct debits on every debt so you never miss one. Then direct every spare pound at your target debt — whether that's the smallest balance or the highest interest rate.</p>
+          <p class="step-tip">Automating minimum payments removes willpower from the equation. It just happens.</p>
+        </div>
       </div>
-      <div class="step-card">
+      <div class="step-item">
         <div class="step-num">04</div>
-        <h3>Choose Your Payoff Method</h3>
-        <p>Snowball (smallest balance first) for motivation. Avalanche (highest interest first) for maximum savings. Both work — pick one and commit.</p>
+        <div class="step-content">
+          <h3>Find money you didn't know you had</h3>
+          <p>Check every subscription you pay — most people find at least one they forgot about. Compare your energy, insurance, and phone bills — switching or negotiating saves hundreds annually. Cut eating out by even once a week. These aren't permanent sacrifices, just temporary redirections toward freedom.</p>
+          <p class="step-tip">Every extra £20–50/month you find cuts months off your debt payoff timeline.</p>
+        </div>
       </div>
-      <div class="step-card">
+      <div class="step-item">
         <div class="step-num">05</div>
-        <h3>Find Extra Income</h3>
-        <p>Even an extra $100–$200 a month accelerates debt payoff dramatically. Side hustles, selling items, or picking up extra hours all count.</p>
+        <div class="step-content">
+          <h3>Build a zero-based budget and stick to it</h3>
+          <p>Assign every pound of your income a job before the month starts. Income minus all expenses — including debt payments and savings — should equal zero. Use our free interactive budget template on the tools page or download the printable PDF version.</p>
+          <p class="step-tip">Month 1 will be messy. Month 2 gets easier. Month 3 feels natural. Keep going.</p>
+        </div>
       </div>
     </div>
   </section>
+
+  <!-- FREE RESOURCES — unique resource links for this page -->
+  <section>
+    <p class="section-tag">Tools to help you right now</p>
+    <h2>Everything you need is free.</h2>
+    <p class="section-sub">No signups required for most of these — just click and use.</p>
+    <div class="resource-grid">
+      <a class="resource-card" href="/free-guide.html">
+        <span class="resource-icon">📖</span>
+        <div><p class="res-tag">Free PDF guide</p><h4>Debt Escape Starter Guide</h4><p>The full 7-page guide to getting out of debt — sent straight to your email.</p></div>
+      </a>
+      <a class="resource-card" href="/tools.html#calc-tool">
+        <span class="resource-icon">🧮</span>
+        <div><p class="res-tag">Free calculator</p><h4>Debt Payoff Calculator</h4><p>See your exact payoff date and how much you save with extra payments.</p></div>
+      </a>
+      <a class="resource-card" href="/tools.html#budget-tool">
+        <span class="resource-icon">📋</span>
+        <div><p class="res-tag">Free tool</p><h4>Budget Template</h4><p>Fill in your numbers live on the page or download the printable PDF.</p></div>
+      </a>
+      <a class="resource-card" href="https://linktr.ee/SurviveAndStack" target="_blank">
+        <span class="resource-icon">💳</span>
+        <div><p class="res-tag">Free PDF guide</p><h4>Credit Score Repair Guide</h4><p>5 steps to start rebuilding your score from any starting number.</p></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- GUIDE CTA -->
+  <div class="guide-cta">
+    <div>
+      <h2>Get the full guide delivered to your inbox.</h2>
+      <p>Everything on this page — and more — in a clear, downloadable PDF. Free, forever.</p>
+    </div>
+    <a class="btn-gold" href="/free-guide.html">Get Free Guide 💛</a>
+  </div>
 
   <footer>
     <a href="/index.html" style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;color:var(--gold);text-decoration:none;">Survive<span style="color:var(--white)">&</span>Stack</a>
